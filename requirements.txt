@@ -1,0 +1,8 @@
+numpy==1.22.3
+pandas== 1.4.1
+scikit-learn==1.0.2
+keybert==0.5.1
+nltk==3.5
+matplotlib==3.5.1
+altair==4.2.0
+
