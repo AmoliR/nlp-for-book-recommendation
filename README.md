@@ -7,5 +7,5 @@
 - The succinct data of keywords that is provided to the recommender system is generated using NLP techniques such as word embeddings.  Keywords that most describe the book are extracted from the book description using BERT-embeddings, this word collection is further reduced using the frequentist feature extraction method TF-IDF that ranks the words based on their frequency in the book and the corpus.     
 - Once the numeric vector representation of all the books is generated, each word vector is compared against the other vector and similar vectors (books) are found using cosine similarity.  
 
-![architecture](images/book_recommendation_engine.svg) 
+![architecture](images/book_recommendation_system.svg) 
 <center><b> Book Recommendation Engine </b></center>
