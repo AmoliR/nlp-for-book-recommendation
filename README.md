@@ -1,3 +1,4 @@
+![](images/books-recommender-banner.jpg)
 # Content-Based Filtering: NLP Based Book Recommender Using BERT-Embeddings
 
 - Content based filtering is one of the two common techniques of recommender systems. intelligible from the name, it uses the content of the entity (to be recommended) to find other relevant recommendations similar to it. In simpler terms the system finds the keywords or attributes related to the product that the user likes, later uses this information to recommend other products having similar attributes. 
