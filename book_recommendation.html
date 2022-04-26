@@ -13138,9 +13138,10 @@ div#notebook {
 <h1 id="Environment-and-Project-Flow">Environment and Project Flow<a class="anchor-link" href="#Environment-and-Project-Flow">&#182;</a></h1><ul>
 <li>The project pipeline is divided into three stages: <br/></li>
 </ul>
-<p><a href="eda.ipynb"><img src="https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter" alt="Open Notebook"></a> <strong>Cleaning</strong> <br/>
-<a href="feature_engineering.ipynb"><img src="https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter" alt="Open Notebook"></a> <strong>Feature Extraction</strong> <br/>
-<a href="model.ipynb"><img src="https://img.shields.io/badge/Jupyter-Open_Notebook-blue?logo=Jupyter" alt="Open Notebook"></a> <strong>Modeling</strong> <br/></p>
+    <ol><li><strong>Cleaning</strong> <br/></li>
+<li><strong>Feature Extraction</strong> <br/></li>
+<li><strong>Modeling</strong> <br/></li>
+    </ol>
 <ul>
 <li>There’s a dedicated notebook for each of these stages containing detailed implementation of all intermediate steps. At the end of each stage the processed data is stored in the form of a CSV file. Current book will serve as a summarised representation of the project.</li>
 <li>I will be using the following list of packages for the project.<blockquote><p><h4 style="color:blue"> ℹ️ Dependencies </h4> <div style="background-color:#dbeaff">  &#10148; numpy &ge; 1.22.3 <br> &#10148; pandas &ge; 1.4.1 <br> &#10148; scikit-learn &ge; 1.0.2 <br> &#10148; keybert &ge; 0.5.1 <br> &#10148; nltk &ge; 3.5 <br> &#10148; matplotlib &ge; 3.5.1 <br> &#10148; altair &ge; 4.2.0 <br> &#10148; dask  &ge; 2022.4.1 <br> </div></p>
@@ -14440,7 +14441,7 @@ Name: keywords, dtype: object</pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <hr>
-<h1 id="Text-Representation">Text Representation<a class="anchor-link" href="#Text-Representation">&#182;</a></h1>
+<h1 id="Text-Representation">Text Representation<a class="anchor-link" href="#Text-Representation">&#182;</a></h1><p><span style="font-size:1.5em;">Notebook:</span> <a href="model.ipynb"><span style="font-size:1.5em;">model.ipynb</span></a></p>
 </div>
 </div>
 </div>
@@ -14983,7 +14984,10 @@ Name: keywords, dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Cosine-Similarity-Between-Books-Vector-Representation">Cosine Similarity Between Books Vector Representation<a class="anchor-link" href="#Cosine-Similarity-Between-Books-Vector-Representation">&#182;</a></h1>
+<hr>
+<hr>
+<h1 id="Cosine-Similarity-Between-Books-Vector-Representation">Cosine Similarity Between Books Vector Representation<a class="anchor-link" href="#Cosine-Similarity-Between-Books-Vector-Representation">&#182;</a></h1><p>Once the numerical vector representation of the data is created for each book, it becomes possible to apply all the techniques applicable in a geometric space. It is possible to find similarity between two vectors (and thereby between books represented as vectors). Cosine similarity is a measure that can find if two vectors in a multidimensional space are pointing in the same direction. It finds the cosine of the angle between the two vectors; smaller the angle higher is the cosine value. If the vectors are perpendicular the cosine similarity becomes zero  signifying the dissimilarity between the vectors.</p>
+
 </div>
 </div>
 </div>
@@ -14999,6 +15003,14 @@ Name: keywords, dtype: object</pre>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each row and column in the similarity matrix represents a book and contains cosine similarity values between them. Diagonal values would be 1 ($\cos(0)$) because a book will have absolute similarity with itself. The similarity matrix generated is sparse so we will use <em>spy</em> to visualise the non-zero elements. All the blue markers in the image below are non-zero values. Books in the indices ranging in 1800-2000 have similarity with very few books.</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15358,6 +15370,19 @@ Books are recommended utilising the following information through keywords:</p>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<hr>
+<h1 id="Improvements">Improvements<a class="anchor-link" href="#Improvements">&#182;</a></h1><ul>
+<li>Currently I have only used a keyword extraction method to tokenize the document. Instead of this some text preprocessing techniques such as Lemmatization and parts Of Speech Tagging can be applied before tokenizing the document. This will enhance the semantic interpretation of the words. </li>
+<li>Keywords relating to the genre of the book could be included in the concise list of keywords to improve the results. </li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
